@@ -36,7 +36,7 @@ Este proyecto transforma datos transaccionales en indicadores estratégicos que 
 
 # 📸 Dashboard
 
-![Dashboard Overview](images/dashboard-overview.png)
+![Dashboard Overview](https://github.com/GuilleBerrutti/ecommerce-sales-intelligence/blob/main/images/dashboard.png)
 
 ---
 
