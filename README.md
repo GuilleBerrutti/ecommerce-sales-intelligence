@@ -13,10 +13,10 @@ Transformar datos transaccionales brutos en indicadores de negocio estratégicos
 
 | KPI | Resultado | Descripción |
 | :--- | :---: | :--- |
-| **Ventas Totales** | **91 M** | Facturación total acumulada en el marketplace. |
-| **Pedidos Totales** | **99 K** | Volumen total de órdenes de compra procesadas. |
-| **Clientes Únicos** | **96 K** | Total de consumidores únicos que realizaron transacciones. |
-| **Ticket Promedio** | **13,6 K** | Valor medio de gasto por cada pedido realizado. |
+| **Ventas Totales** | **91 Millones** | Facturación total acumulada en el marketplace. |
+| **Pedidos Totales** | **99 Mill** | Volumen total de órdenes de compra procesadas. |
+| **Clientes Únicos** | **96 Mill** | Total de consumidores únicos que realizaron transacciones. |
+| **Ticket Promedio** | **13,6 Mill** | Valor medio de gasto por cada pedido realizado. |
 | **Tasa de Entrega** | **97 %** | Porcentaje de pedidos completados con estado *Delivered*. |
 
 ---
