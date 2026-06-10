@@ -4,9 +4,9 @@ A continuación se detallan las medidas calculadas clave implementadas en el mod
 
 ```dax
 ** 1. Facturación total del marketplace**
-Ventas Totales = SUM('Order Items'[price])
+            Ventas Totales = SUM('Order Items'[price])
 
-### Descripción
+## Descripción
 
 Suma todos los valores de una columna numérica.
 
