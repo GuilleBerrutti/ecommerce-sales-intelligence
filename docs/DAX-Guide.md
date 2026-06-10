@@ -1,27 +1,21 @@
-# 📘 DAX Guide
+## 📊 Repositorio de Fórmulas DAX
 
-Guía de las principales funciones DAX utilizadas en el proyecto.
+A continuación se detallan las medidas calculadas clave implementadas en el modelo:
 
----
-
-# SUM
+```dax
+-- 1. Facturación total del marketplace
+Ventas Totales = SUM('Order Items'[price])
 
 ### Descripción
 
 Suma todos los valores de una columna numérica.
 
-### Ejemplo
-
-```DAX
-Ventas Totales =
-SUM('Order Items'[price])
-```
-
 ### Uso en el proyecto
 
-Calcular el volumen total de ventas generado por el marketplace.
+Calcular el volumen total de ventas generado por el marketplace
 
----
+-- 2. Volumen de órdenes únicas
+Pedidos = DISTINCTCOUNT(Orders[order_id])
 
 # DISTINCTCOUNT
 
@@ -29,18 +23,12 @@ Calcular el volumen total de ventas generado por el marketplace.
 
 Cuenta valores únicos dentro de una columna.
 
-### Ejemplo
-
-```DAX
-Pedidos =
-DISTINCTCOUNT(Orders[order_id])
-```
-
 ### Uso en el proyecto
 
 Calcular la cantidad total de pedidos sin duplicados.
 
----
+-- 3. Total de clientes únicos
+Clientes Únicos = DISTINCTCOUNT(Customers[customer_unique_id])
 
 # DIVIDE
 
@@ -50,16 +38,14 @@ Realiza divisiones de forma segura evitando errores cuando el denominador es cer
 
 ### Ejemplo
 
-```DAX
-Ticket Promedio =
-DIVIDE([Ventas Totales],[Pedidos])
 ```
 
 ### Uso en el proyecto
 
 Calcular el ingreso promedio por pedido.
 
----
+-- 4. Gasto medio por pedido
+Ticket Promedio = DIVIDE([Ventas Totales], [Pedidos])
 
 # CALCULATE
 
@@ -67,21 +53,16 @@ Calcular el ingreso promedio por pedido.
 
 Modifica el contexto de filtros para recalcular una medida bajo determinadas condiciones.
 
-### Ejemplo
-
-```DAX
-Ventas Entregadas =
-CALCULATE(
-    [Ventas Totales],
-    Orders[order_status] = "delivered"
-)
-```
-
 ### Uso en el proyecto
 
 Obtener ventas correspondientes únicamente a pedidos entregados.
 
----
+-- 5. Facturación filtrada exclusivamente por pedidos entregados con éxito
+Ventas Entregadas = 
+CALCULATE(
+    [Ventas Totales],
+    Orders[order_status] = "delivered"
+)
 
 # DATEADD
 
@@ -89,25 +70,17 @@ Obtener ventas correspondientes únicamente a pedidos entregados.
 
 Permite desplazar un período temporal hacia adelante o hacia atrás.
 
-### Ejemplo
-
-```DAX
-Ventas Mes Anterior =
-CALCULATE(
-    [Ventas Totales],
-    DATEADD(
-        Calendario[Date],
-        -1,
-        MONTH
-    )
-)
-```
-
 ### Uso en el proyecto
 
 Comparar ventas actuales contra el mes anterior.
 
----
+
+-- 6. Análisis MoM (Month-over-Month) para comparar contra el mes previo
+Ventas Mes Anterior = 
+CALCULATE(
+    [Ventas Totales],
+    DATEADD(Calendario[Date], -1, MONTH)
+)
 
 # RANKX
 
@@ -115,23 +88,18 @@ Comparar ventas actuales contra el mes anterior.
 
 Genera rankings dinámicos utilizando una medida.
 
-### Ejemplo
+### Uso en el proyecto
 
-```DAX
-Ranking Categoría =
+Identificar las categorías con mayor volumen de ventas.
+
+-- 7. Ranking dinámico de categorías por volumen de ingresos
+Ranking Categoría = 
 RANKX(
     ALL(Categories[product_category_name_english]),
     [Ventas Totales],
     ,
     DESC
 )
-```
-
-### Uso en el proyecto
-
-Identificar las categorías con mayor volumen de ventas.
-
----
 
 # ALL
 
