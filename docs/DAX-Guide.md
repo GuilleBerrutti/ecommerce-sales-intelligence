@@ -14,8 +14,8 @@ Suma todos los valores de una columna numérica.
 
 Calcular el volumen total de ventas generado por el marketplace
 
--- 2. Volumen de órdenes únicas
-Pedidos = DISTINCTCOUNT(Orders[order_id])
+**2. Volumen de órdenes únicas**
+            Pedidos = DISTINCTCOUNT(Orders[order_id])
 
 # DISTINCTCOUNT
 
