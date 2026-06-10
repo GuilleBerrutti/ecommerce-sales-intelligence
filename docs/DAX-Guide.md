@@ -3,7 +3,7 @@
 A continuación se detallan las medidas calculadas clave implementadas en el modelo:
 
 ```dax
--- 1. Facturación total del marketplace
+** 1. Facturación total del marketplace**
 Ventas Totales = SUM('Order Items'[price])
 
 ### Descripción
