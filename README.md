@@ -48,34 +48,49 @@ El 97% de los pedidos fueron entregados exitosamente, indicando una operación l
 
 ### 2. Concentración de ingresos
 
-Un grupo reducido de categorías concentra gran parte de la facturación total, permitiendo identificar segmentos estratégicos para inversión y crecimiento.
+Un grupo reducido de categorías concentra gran parte de la facturación total, lo que sugiere oportunidades de focalización estratégica en segmentos de alto impacto.
 
 ### 3. Comportamiento estacional
 
-El volumen de ventas presenta fluctuaciones mensuales que pueden asociarse a eventos promocionales y períodos de alta demanda.
+El volumen de ventas presenta variaciones mensuales asociadas a patrones de demanda y posibles eventos promocionales.
 
 ### 4. Base de clientes amplia
 
-El marketplace cuenta con una gran cantidad de clientes únicos, evidenciando alcance comercial y capacidad de adquisición.
+El marketplace cuenta con una base significativa de clientes únicos, evidenciando un buen nivel de alcance comercial.
 
 ### 5. Oportunidades de fidelización
 
-El análisis de pedidos permite detectar segmentos con potencial para campañas de retención y recompra.
+El análisis de pedidos muestra una proporción relevante de clientes con compras únicas, lo que abre espacio para estrategias de retención.
 
 ---
 
-# 💡 Decisiones que Permite Tomar
+# 💡 Decisiones de Negocio que Permite Tomar
 
-Este dashboard puede utilizarse para:
+Este dashboard está diseñado para apoyar decisiones como:
 
-* Priorizar categorías con mayor rentabilidad.
-* Detectar caídas de ventas mensuales.
-* Evaluar tendencias de crecimiento comercial.
-* Monitorear indicadores logísticos.
-* Analizar la evolución de clientes.
-* Identificar oportunidades de fidelización.
-* Optimizar campañas promocionales.
-* Mejorar la planificación comercial.
+* Priorización de categorías de mayor contribución al ingreso.
+* Detección de caídas o cambios en tendencias de ventas.
+* Seguimiento del desempeño logístico en el tiempo.
+* Evaluación del comportamiento de clientes.
+* Identificación de segmentos con potencial de fidelización.
+* Optimización de campañas comerciales y promociones.
+* Mejora de la planificación de inventario y demanda.
+
+---
+
+# 📈 Análisis de Escenarios e Impacto Potencial
+
+A partir del comportamiento observado en los KPIs, es posible plantear escenarios de mejora que sirven como guía para la toma de decisiones estratégicas.
+
+Estos escenarios no representan predicciones, sino simulaciones basadas en la estructura del negocio:
+
+| Escenario | Impacto Potencial |
+|----------|------------------|
+| Incremento del ticket promedio mediante estrategias de cross-selling | Aumento proporcional en ingresos sin necesidad de mayor adquisición de clientes |
+| Mejora en la tasa de recompra de clientes | Mayor eficiencia del revenue por cliente existente |
+| Optimización del rendimiento en categorías líderes | Mayor concentración de ingresos en segmentos estratégicos |
+| Reducción de fricción en el proceso logístico | Mejora en la experiencia del cliente y retención |
+| Incremento de la participación de clientes recurrentes | Estabilización del ingreso mensual |
 
 ---
 
@@ -114,90 +129,10 @@ La Tabla Calendario fue desarrollada específicamente para habilitar análisis t
 
 ---
 
-# 📊 Principales Métricas DAX
+# 📊 Business Logic & DAX Measures
 
 ### Ventas Totales
 
 ```dax
 Ventas Totales =
 SUM('Order Items'[price])
-```
-
-### Ticket Promedio
-
-```dax
-Ticket Promedio =
-DIVIDE([Ventas Totales], [Pedidos])
-```
-
-### Ranking de Categorías
-
-```dax
-Ranking Categoría =
-RANKX(
-    ALL(Categories[product_category_name_english]),
-    [Ventas Totales],
-    ,
-    DESC
-)
-```
-
-Para consultar el repositorio completo de medidas:
-
-📄 **docs/DAX-Guide.md**
-
----
-
-# 📂 Estructura del Proyecto
-
-```text
-ecommerce-sales-intelligence/
-│
-├── dashboard/
-│   └── EcommerceDashboard.pbix
-│
-├── data/
-│   └── olist_dataset.csv
-│
-├── images/
-│   └── dashboard-overview.png
-│
-├── docs/
-│   └── DAX-Guide.md
-│
-├── README.md
-└── LICENSE
-```
-
----
-
-# 🚀 Competencias Demostradas
-
-* Business Intelligence
-* Data Analytics
-* Data Visualization
-* KPI Design
-* Data Modeling
-* DAX
-* Power Query
-* ETL
-* Dashboard Development
-* Storytelling con Datos
-* Toma de Decisiones Basada en Datos
-
----
-
-# 📌 Dataset
-
-Dataset público de Olist E-Commerce utilizado con fines educativos y de portfolio.
-
-https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
-
----
-
-### Autor
-
-**Guillermo Berrutti**
-
-Analista de Datos | Power BI | SQL | Excel | Business Intelligence
-
